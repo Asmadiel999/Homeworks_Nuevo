@@ -1,0 +1,31 @@
+<main>
+    <div>
+      <form id="form" (submit)="$event.preventDefault(); agregar(nombre.value,numero.value)">
+        <section class="laInfo">
+          <h1>Aplicación de Contactos</h1>
+          <table>
+            <tr>
+              <td>Nombre: </td>
+              <td><input type="text" ngModel placeholder="nombre contacto" #nombre></td>
+            </tr>
+            <tr>
+              <td>Teléfono: </td>
+              <td><input type="text" ngModel placeholder="teléfono contacto" #numero></td>
+            </tr>
+          </table>
+          
+          <div>
+            <app-anadir-contacto></app-anadir-contacto>
+            <app-eliminar-contacto></app-eliminar-contacto>
+          </div>
+        </section>
+      </form>
+
+      <h3>Contactos</h3>
+      <div id="informacion">
+        <div class="contacto" *ngFor="let contacto of contactos">
+          <h1>{{contacto.mostrarInfo()}}</h1>
+        </div>
+      </div>    
+    </div>
+</main>
