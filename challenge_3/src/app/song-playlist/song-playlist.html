@@ -1,0 +1,8 @@
+<div class="canciones" *ngIf="nowPlaying">
+    <h2>Tocando</h2>
+    <h3>{{nowPlaying.id}}</h3>
+    <p>{{nowPlaying.title}}</p>
+</div>
+<div class="controles">
+    <button (click)="onNext()">Canción Siguiente</button>
+</div>
