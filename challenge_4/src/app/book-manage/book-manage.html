@@ -1,0 +1,11 @@
+<div>
+    <h2>Book Management</h2>
+    <ul>
+        @for(item of book.items; track item){
+            <h3>{{item.name}}</h3>
+            <p>{{item.isbn}}</p>
+            <p>{{item.author}}</p>
+            <p>{{item.editorial}}</p>
+        }
+    </ul>
+</div>
