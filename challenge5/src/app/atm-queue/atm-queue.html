@@ -1,0 +1,12 @@
+<div>
+    <h2>ATM Managment</h2>
+    <h3>Primera Persona de La lista</h3>
+
+    @for(item of queue.items; track item){
+        <h4>{{item.name}}</h4>
+        <p>Fecha: {{item.date}}</p>
+        <p>Monto Disponible: {{item.withdrawalAmount}}</p>
+    }
+
+    
+</div>
