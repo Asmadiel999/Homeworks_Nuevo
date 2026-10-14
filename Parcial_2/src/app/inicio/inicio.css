@@ -1,0 +1,10 @@
+div {
+    margin-top: 20px;
+    margin-left: 20px;
+}
+
+.barra { display: flex; gap: 8px; margin-bottom: 12px; }
+.fila { padding: 4px 8px; cursor: pointer; user-select: none; }
+.fila:hover { background: #f0f0f0; }
+.fila.seleccionado { background: #dbeafe; }
+.icono { margin-right: 6px; }

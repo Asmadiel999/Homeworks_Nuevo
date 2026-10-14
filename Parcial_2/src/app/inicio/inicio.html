@@ -1,0 +1,42 @@
+<!-- inicio.component.html -->
+<div class="barra">
+  <input [(ngModel)]="nombreNuevo" placeholder="Nombre..." (keyup.enter)="agregar('archivo')" />
+  <button [disabled]="!puedeAgregar" (click)="agregar('carpeta')">📁 Nueva carpeta</button>
+  <button [disabled]="!puedeAgregar" (click)="agregar('archivo')">📄 Nuevo archivo</button>
+  <button [disabled]="seleccionado === arbol.raiz" (click)="eliminar()">🗑 Eliminar</button>
+</div>
+
+<p>Seleccionado: <strong>{{ seleccionado.valor.nombre }}</strong></p>
+
+<!-- Plantilla recursiva -->
+<ng-template #nodoTpl let-nodo let-nivel="nivel">
+  <div
+    class="fila"
+    [class.seleccionado]="nodo === seleccionado"
+    [style.padding-left.px]="nivel * 16"
+    (click)="seleccionar(nodo)"
+  >
+    @if (nodo.valor.tipo === 'carpeta') {
+      <span class="icono" (click)="alternar(nodo); $event.stopPropagation()">
+        {{ nodo.valor.abierto ? '📂' : '📁' }}
+      </span>
+    } @else {
+      <span class="icono">📄</span>
+    }
+    {{ nodo.valor.nombre }}
+  </div>
+
+  @if (nodo.valor.tipo === 'carpeta' && nodo.valor.abierto) {
+    @for (hijo of nodo.hijos; track hijo) {
+      <ng-container
+        *ngTemplateOutlet="nodoTpl; context: { $implicit: hijo, nivel: nivel + 1 }"
+      />
+    }
+  }
+</ng-template>
+
+@if (arbol.raiz) {
+  <ng-container
+    *ngTemplateOutlet="nodoTpl; context: { $implicit: arbol.raiz, nivel: 0 }"
+  />
+}

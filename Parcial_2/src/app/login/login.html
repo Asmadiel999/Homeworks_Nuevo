@@ -1,0 +1,20 @@
+<div class="contenedor-login">
+  <h2>Login</h2>
+
+  <input
+    type="email"
+    placeholder="Email"
+    [ngModel]="email()"
+    (ngModelChange)="email.set($event)"
+  >
+
+  <input
+    type="password"
+    placeholder="Contraseña"
+    [ngModel]="contrasena()"
+    (ngModelChange)="contrasena.set($event)"
+    (keyup.enter)="handleLogin()"
+  >
+
+  <button type="button" (click)="handleLogin()">Login</button>
+</div>
