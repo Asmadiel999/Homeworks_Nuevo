@@ -5,14 +5,16 @@ import { AuthService } from '../auth.service';
   selector: 'app-login',
 template: `
   <div class="login">
-    <h2>Iniciar sesión</h2>
+    <h2>🎵 Iniciar sesión</h2>
     <input #email type="email" placeholder="Correo">
     <input #pass type="password" placeholder="Contraseña">
     <button (click)="entrar(email.value, pass.value)">Iniciar sesión</button>
-    <p style="margin-top: 20px">Gmail prueba:usuario@gmail.com</p> 
-    <p>Contraseña de prueba:789</p>
+    <div class="prueba">
+      <p>Gmail prueba: usuario@gmail.com</p>
+      <p>Contraseña prueba: 789</p>
+    </div>
     @if (error()) {
-      <p style="color:green">Correo o contraseña incorrectos</p>
+      <p class="error">Correo o contraseña incorrectos</p>
     }
   </div>
 `,

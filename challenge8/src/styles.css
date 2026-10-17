@@ -1,68 +1,129 @@
-body {
-  margin: 0;
-  font-family: Arial, sans-serif;
-  background: #f4f5f9;
-  color: #222;
+:root {
+  --fondo: #121212;
+  --tarjeta: #1e1e1e;
+  --borde: #2e2e2e;
+  --texto: #f1f1f1;
+  --texto-suave: #a0a0a0;
+  --verde: #1db954;
+  --verde-oscuro: #17a34a;
 }
 
-/* Encabezado */
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  font-family: 'Segoe UI', Tahoma, Verdana, sans-serif;
+  background: var(--fondo);
+  color: var(--texto);
+}
+
+h1, h2 { margin-top: 0; }
+h2 { font-size: 1.6rem; }
+
+/* ====== Encabezado ====== */
 header {
   display: flex;
   align-items: center;
-  gap: 15px;
-  padding: 10px 22px;
-  background: green;
-  color: white;
+  gap: 20px;
+  padding: 14px 28px;
+  background: var(--tarjeta);
+  border-bottom: 2px solid var(--verde);
 }
-header span { 
-  margin-right: auto; font-weight: bold; 
+header span {
+  margin-right: auto;
+  font-weight: bold;
+  color: var(--verde);
 }
-header a { 
-  color: white; text-decoration: none;
+header a {
+  color: var(--texto-suave);
+  text-decoration: none;
+  padding: 6px 4px;
+  border-bottom: 2px solid transparent;
 }
-header a:hover { 
-  text-decoration: underline; 
+header a:hover { color: var(--texto); }
+header a.activo {
+  color: var(--texto);
+  border-bottom-color: var(--verde);
 }
 
-/* Botones */
+/* ====== Botones ====== */
 button {
-  padding: 10px 14px;
+  padding: 10px 18px;
   border: none;
-  border-radius: 6px;
-  background: green;
-  color: black;
+  border-radius: 20px;
+  background: var(--verde);
+  color: #000;
+  font-weight: bold;
   cursor: pointer;
 }
-button:hover { 
-  background: lightgreen 
+button:hover { background: var(--verde-oscuro); }
+header button {
+  background: transparent;
+  color: var(--texto);
+  border: 1px solid var(--texto-suave);
+  padding: 6px 14px;
 }
+header button:hover { border-color: var(--texto); background: #2a2a2a; }
 
-header button { 
-  background: black; color: green; 
-}
-
-/* Login */
+/* ====== Login ====== */
 .login {
   max-width: 340px;
   margin: 80px auto;
-  padding: 20px;
-  background: white;
-  border-radius: 10px;
-  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.1);
+  padding: 32px 28px;
+  background: var(--tarjeta);
+  border: 1px solid var(--borde);
+  border-radius: 14px;
   text-align: center;
 }
+.login h2 { margin-bottom: 20px; }
 .login input {
   width: 100%;
-  box-sizing: border-box;
-  margin-bottom: 15px;
-  padding: 10px;
-  border: 1px solid lightgray;
-  border-radius: 7px;
+  margin-bottom: 14px;
+  padding: 11px 12px;
+  background: #2a2a2a;
+  color: var(--texto);
+  border: 1px solid var(--borde);
+  border-radius: 8px;
+  font-size: 0.95rem;
 }
-.login button { 
-  width: 100%; 
+.login input:focus {
+  outline: none;
+  border-color: var(--verde);
+}
+.login button { width: 100%; margin-top: 4px; }
+.login .prueba {
+  margin-top: 20px;
+  padding: 10px;
+  background: #2a2a2a;
+  border-radius: 8px;
+  font-size: 0.85rem;
+  color: var(--texto-suave);
+  text-align: left;
+}
+.login .prueba p { margin: 4px 0; }
+.login .error {
+  margin-top: 14px;
+  color: #ff6b6b;
+  font-size: 0.9rem;
 }
 
-main, .container { 
-  padding: 24px; 
+/* ====== Contenido de las páginas ====== */
+main, .pagina {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 32px 24px;
+}
+.pagina h2 {
+  padding-left: 12px;
+  border-left: 5px solid var(--verde);
+}
+.pagina p { color: var(--texto-suave); }
+
+.caja {
+  margin-top: 20px;
+  padding: 24px;
+  background: var(--tarjeta);
+  border: 1px solid var(--borde);
+  border-radius: 12px;
+  color: var(--texto-suave);
 }
