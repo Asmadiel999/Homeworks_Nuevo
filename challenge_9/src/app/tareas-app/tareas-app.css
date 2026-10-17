@@ -1,0 +1,108 @@
+.tareas {
+  max-width: 620px;
+  margin: 2rem auto;
+  padding: 0 1rem;
+  font-family: system-ui, sans-serif;
+  color: #1f2933;
+}
+
+.formulario {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+  margin-bottom: 1.5rem;
+}
+
+.formulario input,
+.formulario textarea {
+  padding: 0.55rem 0.7rem;
+  border: 1px solid #b8c1cc;
+  border-radius: 6px;
+  font: inherit;
+}
+
+.formulario input:focus-visible,
+.formulario textarea:focus-visible,
+.btn:focus-visible {
+  outline: 2px solid #2563eb;
+  outline-offset: 2px;
+}
+
+.acciones {
+  display: flex;
+  gap: 0.5rem;
+  margin-top: 0.4rem;
+}
+
+.btn {
+  padding: 0.45rem 0.9rem;
+  border: 1px solid #b8c1cc;
+  border-radius: 6px;
+  background: #fff;
+  font: inherit;
+  cursor: pointer;
+}
+
+.btn.primario {
+  background: #2563eb;
+  border-color: #2563eb;
+  color: #fff;
+}
+
+.btn.peligro {
+  color: #b42318;
+  border-color: #f0b4ae;
+}
+
+.btn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.lista {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+}
+
+.tarea {
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+  padding: 0.8rem;
+  border: 1px solid #d5dbe3;
+  border-radius: 8px;
+}
+
+.tarea.en-edicion {
+  border-color: #2563eb;
+  background: #f1f6ff;
+}
+
+.contenido {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 0.2rem;
+}
+
+.contenido span {
+  color: #52606d;
+  font-size: 0.9rem;
+}
+
+.tarea.completada .contenido {
+  text-decoration: line-through;
+  opacity: 0.6;
+}
+
+.tarea .acciones {
+  margin: 0;
+}
+
+.vacio {
+  color: #52606d;
+}
