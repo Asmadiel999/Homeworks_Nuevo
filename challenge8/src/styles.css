@@ -1,0 +1,68 @@
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background: #f4f5f9;
+  color: #222;
+}
+
+/* Encabezado */
+header {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  padding: 10px 22px;
+  background: green;
+  color: white;
+}
+header span { 
+  margin-right: auto; font-weight: bold; 
+}
+header a { 
+  color: white; text-decoration: none;
+}
+header a:hover { 
+  text-decoration: underline; 
+}
+
+/* Botones */
+button {
+  padding: 10px 14px;
+  border: none;
+  border-radius: 6px;
+  background: green;
+  color: black;
+  cursor: pointer;
+}
+button:hover { 
+  background: lightgreen 
+}
+
+header button { 
+  background: black; color: green; 
+}
+
+/* Login */
+.login {
+  max-width: 340px;
+  margin: 80px auto;
+  padding: 20px;
+  background: white;
+  border-radius: 10px;
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.1);
+  text-align: center;
+}
+.login input {
+  width: 100%;
+  box-sizing: border-box;
+  margin-bottom: 15px;
+  padding: 10px;
+  border: 1px solid lightgray;
+  border-radius: 7px;
+}
+.login button { 
+  width: 100%; 
+}
+
+main, .container { 
+  padding: 24px; 
+}

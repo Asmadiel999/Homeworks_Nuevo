@@ -1,0 +1,12 @@
+@if (auth.usuario()) {
+  <header>
+    <span>Buenas, {{ auth.usuario() }}</span>
+    <a routerLink="/artistas">Artistas</a>
+    <a routerLink="/favoritos">Favoritos</a>
+    <button (click)="salir()">Cerrar Sesión</button>
+
+
+  </header>
+}
+
+<router-outlet />
