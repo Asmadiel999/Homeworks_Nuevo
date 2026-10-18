@@ -1,8 +1,8 @@
 @if (auth.usuario()) {
   <header>
     <span>🎵 Buenas, {{ auth.usuario() }}</span>
-    <a routerLink="/artistas">Artistas</a>
-    <a routerLink="/favoritos">Favoritos</a>
+    <a routerLink="/tareas">Tareas</a>
+    <a routerLink="/libros">Libros</a>
     <button (click)="salir()">Cerrar Sesión</button>
 
 

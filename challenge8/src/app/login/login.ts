@@ -25,7 +25,7 @@ export class Login {
   error = signal(false);
 
   entrar(email: string, pass: string) {
-    if (this.auth.login(email, pass)) this.router.navigate(['/artistas']);
+    if (this.auth.login(email, pass)) this.router.navigate(['/libros']);
     else this.error.set(true);
   }
 }
