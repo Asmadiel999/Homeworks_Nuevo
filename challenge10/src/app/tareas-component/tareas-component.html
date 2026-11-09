@@ -1,0 +1,22 @@
+<h1>Mis Tareas</h1>
+
+<form (ngSubmit)="agregar()" >
+    <input name="nueva" [(ngModel)]="nueva" placeholder="Nueva Tarea" required>
+    <input type="file" accept="image/*" (change)="subir($event)">
+    @if (url()) {<img [src]="url()" width="160">}
+    <button type="submit">Agregar</button>
+</form>
+
+<ul>
+    @for (t of tareas(); track t.id) {
+        <li>
+            <input type="checkbox" [checked]="t.completada"
+                (change)="completar(t.id, !t.completada)"
+            >
+            {{t.titulo}}
+            <button (click)="borrar(t.id)">Borrar</button>
+        </li>
+    } @empty {
+        <li>No hay tareas</li>
+    }
+</ul>

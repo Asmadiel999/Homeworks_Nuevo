@@ -1,0 +1,13 @@
+<form (ngSubmit)="entrar()">
+    <div class="container">
+        <input type="email" name="email"
+            [(ngModel)]="email" placeholder="Correo">   
+        <input type="password" name="password"
+            [(ngModel)]="clave" placeholder="Contraseña">
+        
+        <button type="submit">Entrar</button>
+        <button type="button" (click)="registrar()">Crear Cuenta</button>
+    </div>
+</form>
+
+@if (msg) {<p>{{msg}}</p>}
