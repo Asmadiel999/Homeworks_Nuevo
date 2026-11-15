@@ -1,0 +1,33 @@
+<h2>Agregar Ciudad</h2>
+
+<input [(ngModel)]="cityName" placeholder="Nombre de la Ciudad">
+<button (click)="addCity()">Agregar</button>
+
+<h2>Agregar Persona</h2>
+<input [(ngModel)]="personName" placeholder="Nombre">
+<input [(ngModel)]="personAge" placeholder="Edad">
+<select [(ngModel)]="personCity">
+  @for (city of graph.cities; track city) {
+    <option [ngValue]="city">{{city.name}}</option>
+  }
+</select>
+<button (click)="addPerson()">Agregar</button>
+
+<h2>Personas por Ciudad</h2>
+
+<select [(ngModel)]="selectedCity">
+  @for (city of graph.cities; track city) {
+    <option [ngValue]="city">{{city.name}}</option>
+  }
+</select>
+
+@if (selectedCity) {
+  <ul>
+    @for (person of graph.getPeopleInCity(selectedCity); track person) {
+      <li>{{person.name}} ({{person.age}} años)</li>
+    }
+  </ul>
+}
+
+<h2>Grafo</h2>
+<app-graph-view></app-graph-view>
