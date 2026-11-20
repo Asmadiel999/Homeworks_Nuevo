@@ -1,0 +1,16 @@
+.grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-top: 16px;
+}
+
+img {
+    height: 200px;
+    border-radius: 8px;
+    
+}
+
+.error{
+    color: red;
+}

@@ -1,0 +1,23 @@
+<h1>Buscador de Gifs</h1>
+
+<input
+  [(ngModel)]="query"
+  (keyup.enter)="Buscar()"
+  placeholder="Escribe algo: ej: smile"
+>
+
+<button (click)="Buscar()">Buscar</button>
+
+@if (loading()) {
+  <p>cargando...</p>
+}
+
+@if (error()) {
+  <p class="error">{{error()}}</p>
+}
+
+<div class="grid">
+  @for (gif of gifs(); track gif.id) {
+    <img [src]="gif.images.fixed_height.url" [alt]="gif.title">
+  }
+</div>
