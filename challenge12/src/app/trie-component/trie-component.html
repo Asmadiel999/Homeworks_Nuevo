@@ -1,0 +1,22 @@
+<h3>Agregar Palabra</h3>
+<input [(ngModel)]="nombre" placeholder="Nombre">
+<input type="number" [(ngModel)]=" popularidad" placeholder="Popularidad">
+<button (click)="agregar()">Agregar</button>
+
+<h3>Autocompletar</h3>
+<input [(ngModel)]="prefijo" (ngModelChange)="buscarSugerencia()" placeholder="Escribe un Prefijo">
+<ul>
+    @for (s of sugerencias; track s.name) {
+        <li>{{s.name}} ({{s.popularity}})</li>
+    }
+</ul>
+
+<h3>Top Palabras más populares</h3>
+<input type="number" [(ngModel)]="k">
+<button (click)="mostrarTop()">Ver Top</button>
+
+<ol>
+    @for (t of top; track t.name) {
+        <li>{{t.name}} ({{t.popularity}})</li>
+    }
+</ol>
